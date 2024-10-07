@@ -1,10 +1,14 @@
 
 import './App.css'
-import Logo from './components/logo'
+import Navbar from './components/Navbar'
+import SearchBar from './components/SearchBar'
 
 function App() {
   return (
-      <Logo/>
+      <>
+      <Navbar/>
+      <SearchBar/>
+      </>
     )
 }  
 
