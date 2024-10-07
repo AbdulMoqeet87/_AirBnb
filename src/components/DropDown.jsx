@@ -1,7 +1,4 @@
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faUserCircle } from '@fortawesome/free-solid-svg-icons';
-
+import  { useState } from 'react';
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,17 +11,17 @@ const Dropdown = () => {
     <div className="dropdown-container">
       <button className="dropdown-button" onClick={toggleDropdown}>
         {/* Hamburger Menu Icon */}
-        <FontAwesomeIcon icon={faBars} className="hamburger-icon" />
+        <span className="hamburger-icon">&#9776;</span>
         {/* Profile Icon */}
-        <FontAwesomeIcon icon={faUserCircle} className="profile-icon" />
+        <span className="profile-icon">&#128100;</span>
       </button>
 
       {isOpen && (
         <div className="dropdown-menu">
           <ul>
-            <li><a href="#profile">Login</a></li>
-            <li><a href="#settings">Signup </a></li>
-
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#logout">Logout</a></li>
           </ul>
         </div>
       )}

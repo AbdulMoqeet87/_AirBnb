@@ -131,7 +131,7 @@
   max-width: 600px; /* Sets a max width */
 
   padding: 10px;
-  margin-left: 60%;
+  margin-left: 30%;
   border-radius: 50px; /* Rounded edges */
   background-color: #f1f1f1;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
@@ -163,4 +163,46 @@
 
 .search-button:hover {
   background-color: #d120ba; /* Darken on hover */
+}
+
+
+.category-slider {
+  
+  margin-top: 20px;
+}
+
+.category-item {
+  text-align: center;
+  padding: 0px;
+}
+
+.category-item img {
+  width: 0%;
+  border-radius: 10px;
+}
+
+.slick-slide {
+  margin: 0 10px;
+}
+
+.slick-dots {
+  bottom: -30px; /* Adjust the position of the dots */
+}
+.slick-prev,
+.slick-next {
+  z-index: 1; /* Ensure arrows are above other content */
+  color: black; /* Change color if necessary */
+  width: 30px; /* Set width */
+  height: 30px; /* Set height */
+}
+
+* {
+  font-family: "Oswald", sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar{
+  display: none;
 }
