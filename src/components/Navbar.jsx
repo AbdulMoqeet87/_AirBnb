@@ -16,7 +16,6 @@ const Navbar = () => {
         <li><a href="/experiences">Experiences</a></li>
         <li><a href="/online-experiences">Online Experiences</a></li>
       </ul>
-
       <Dropdown/>
     </nav>
     
