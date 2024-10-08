@@ -14,7 +14,7 @@ const properties = [
     rating: 4.8,
   },
   {
-    image: '/hotel.jpg',
+    image: '/beach.jpg',
     title: 'Cozy Private Room',
     type: 'Private room',
     guests: 2,
@@ -24,7 +24,7 @@ const properties = [
     rating: 4.5,
   },
   {
-    image: '/hotel.jpg',
+    image: '/beach2.jpg',
     title: 'Beachside Villa',
     type: 'Entire home',
     guests: 8,
@@ -34,7 +34,7 @@ const properties = [
     rating: 5.0,
   },
   {
-    image: '/hotel.jpg',
+    image: '/urban.jpg',
     title: 'Modern Apartment',
     type: 'Entire home',
     guests: 4,
@@ -54,7 +54,7 @@ const properties = [
     rating: 4.5,
   },
   {
-    image: 'https://via.placeholder.com/300?text=Villa+3',
+    image: '/urban.jpg',
     title: 'Beachside Villa',
     type: 'Entire home',
     guests: 8,
