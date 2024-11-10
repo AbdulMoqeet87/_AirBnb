@@ -2,8 +2,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-const CardList = () => {
+const CardList = ( category) => {
 
+  console.log(category.categ.type,"this is cat ");
   const [properties,setProperties] =useState([]);
   useEffect(()=>{
     
@@ -32,8 +33,13 @@ catch(error)
 
 
       <div className="card-list">
-        {properties.map((property, index) => (
+        {
+          properties
+          .filter((property) => !category || property.type === category.categ.type)
+          .map((property, index) => (
+          
           <div className="card" key={index}>
+         
             <img src={property.image} alt={property.title} className="card-img" />
             <div className="card-body">
               <h3 className="card-title">{property.title}</h3>
@@ -45,7 +51,8 @@ catch(error)
               <p className="card-rating">Rating: {property.rating}</p>
             </div>
           </div>
-        ))}
+        ))
+        }
       </div>
     );
   };
