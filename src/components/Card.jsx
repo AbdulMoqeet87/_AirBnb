@@ -1,74 +1,36 @@
 
-
-
-
-const properties = [
-  {
-    image: "/hotel.jpg",
-    title: 'Modern Apartment',
-    type: 'Entire home',
-    guests: 4,
-    bedrooms: 2,
-    bathrooms: 1,
-    price: '$120/night',
-    rating: 4.8,
-  },
-  {
-    image: '/beach.jpg',
-    title: 'Cozy Private Room',
-    type: 'Private room',
-    guests: 2,
-    bedrooms: 1,
-    bathrooms: 1,
-    price: '$80/night',
-    rating: 4.5,
-  },
-  {
-    image: '/beach2.jpg',
-    title: 'Beachside Villa',
-    type: 'Entire home',
-    guests: 8,
-    bedrooms: 4,
-    bathrooms: 3,
-    price: '$350/night',
-    rating: 5.0,
-  },
-  {
-    image: '/urban.jpg',
-    title: 'Modern Apartment',
-    type: 'Entire home',
-    guests: 4,
-    bedrooms: 2,
-    bathrooms: 1,
-    price: '$120/night',
-    rating: 4.8,
-  },
-  {
-    image: '/hotel.jpg',
-    title: 'Cozy Private Room',
-    type: 'Private room',
-    guests: 2,
-    bedrooms: 1,
-    bathrooms: 1,
-    price: '$80/night',
-    rating: 4.5,
-  },
-  {
-    image: '/urban.jpg',
-    title: 'Beachside Villa',
-    type: 'Entire home',
-    guests: 8,
-    bedrooms: 4,
-    bathrooms: 3,
-    price: '$350/night',
-    rating: 5.0,
-  },
-];
-
-
+import { useEffect } from "react";
+import { useState } from "react";
 
 const CardList = () => {
+
+  const [properties,setProperties] =useState([]);
+  useEffect(()=>{
+    
+fetchData()
+  },[]
+)
+
+const fetchData =async()=>{
+
+  try{
+    const response = await fetch('http://localhost:5000/');
+  
+  const data = await response.json();
+  console.log(data);
+  setProperties(data);
+
+  }
+catch(error)
+{
+    console.log(error.message);
+}  
+
+}
     return (
+      
+
+
       <div className="card-list">
         {properties.map((property, index) => (
           <div className="card" key={index}>
