@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {context}from '../App.jsx';
+import {context}from '../Pages/HomePage.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUmbrellaBeach, faTree, faCity, faHouseChimney, faGem, faHome, faBox } from '@fortawesome/free-solid-svg-icons'; // Import icons
 import { useContext} from "react";

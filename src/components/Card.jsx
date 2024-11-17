@@ -1,10 +1,10 @@
 
 import { useEffect } from "react";
 import { useState } from "react";
+import axios from "axios";
+const CardList = (category) => {
 
-const CardList = ( category) => {
-
-  console.log(category.categ.type,"this is cat ");
+  const categoryType = category?.categ?.type || "Entire home";
   const [properties,setProperties] =useState([]);
   useEffect(()=>{
     
@@ -15,9 +15,9 @@ fetchData()
 const fetchData =async()=>{
 
   try{
-    const response = await fetch('http://localhost:5000/');
+    const response = await axios.get('http://localhost:5000/listings');
   
-  const data = await response.json();
+  const data =  response.data;
   console.log(data);
   setProperties(data);
 
@@ -26,16 +26,18 @@ catch(error)
 {
     console.log(error.message);
 }  
-
 }
-    return (
+
+
+return (
       
 
 
       <div className="card-list">
         {
+
           properties
-          .filter((property) => !category || property.type === category.categ.type)
+          .filter((property) =>  property.type === categoryType)
           .map((property, index) => (
           
           <div className="card" key={index}>

@@ -1,29 +1,22 @@
-import React,{ useState } from 'react'
 import './App.css'
-import SimpleCard from './components/Card'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Home from './Pages/HomePage';
 
-import CategorySlider from './components/Categories'
-import Footer from './components/footer'
-import Navbar from './components/Navbar'
-import SearchBar from './components/SearchBar'
-export const context = React.createContext();
+
 
 function App() {
- 
- 
-  const [cat,setCategory]=useState("");  
-  
+   
   return (
-      <context.Provider value={[cat,setCategory]}>
-      
-      <Navbar/>
-      <SearchBar/>
-      <CategorySlider/>
-      <SimpleCard categ={cat}/>
-      <Footer/>
-      
-      </context.Provider>
-    )
+<>
+<Router>
+    <Routes>
+                  
+          <Route path='/home' element={<Home/>}/>
+
+</Routes>
+</Router>
+</>
+  )
 }  
 
-export default App
+export default App;
