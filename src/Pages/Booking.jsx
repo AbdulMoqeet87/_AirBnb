@@ -92,7 +92,7 @@ function Booking() {
               </div>
 
               <div className="flex space-x-8">
-                <button onClick={() => navigate("/reservation")} className="bg-blue-600 text-white px-10 py-2 rounded-md shadow hover:bg-blue-500">
+                <button onClick={() => navigate("/reservation",{ state: { Obj: obj } })} className="bg-pink-600 text-white px-10 py-2 rounded-md shadow hover:bg-blue-500">
                   Book Now
                 </button>
               </div>
