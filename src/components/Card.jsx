@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const CardList = (category) => {
 
   const categoryType = category?.categ?.type || "Entire home";
@@ -11,7 +12,7 @@ const CardList = (category) => {
 fetchData()
   },[]
 )
-
+const navigate= useNavigate();
 const fetchData =async()=>{
 
   try{
@@ -28,6 +29,13 @@ catch(error)
 }  
 }
 
+function DetailPage(id)
+{
+    if(id)
+      navigate('/booking',{ state: { id: id } });
+    
+}
+
 
 return (
       
@@ -40,7 +48,7 @@ return (
           .filter((property) =>  property.type === categoryType)
           .map((property, index) => (
           
-          <div className="card" key={index}>
+          <div  className="card"  onClick={() =>DetailPage(property.id)}   key={index}>
          
             <img src={property.image} alt={property.title} className="card-img" />
             <div className="card-body">
