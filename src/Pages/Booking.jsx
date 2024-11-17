@@ -9,7 +9,10 @@ import BathtubIcon from '@mui/icons-material/Bathtub';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import SingleBedIcon from '@mui/icons-material/SingleBed';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { useNavigate } from 'react-router-dom';
 function Booking() {
+
+    const navigate = useNavigate();
   const location = useLocation();
   const { id } = location.state || {};
 
@@ -35,7 +38,7 @@ function Booking() {
   return (
     <>
       <Navbar />
-      <div className="mt-20 container mx-auto p-6">
+      <div className="mt-20 container mx-auto p-6 mb-20">
         {loading ? (
           <div className="text-center py-20">
             <p className="text-xl font-semibold">Loading property details...</p>
@@ -89,7 +92,7 @@ function Booking() {
               </div>
 
               <div className="flex space-x-8">
-                <button className="bg-blue-600 text-white px-10 py-2 rounded-md shadow hover:bg-blue-500">
+                <button onClick={() => navigate("/reservation")} className="bg-blue-600 text-white px-10 py-2 rounded-md shadow hover:bg-blue-500">
                   Book Now
                 </button>
               </div>
