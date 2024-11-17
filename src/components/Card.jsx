@@ -15,7 +15,7 @@ fetchData()
 const fetchData =async()=>{
 
   try{
-    const response = await axios.get('http://localhost:5000/listings');
+    const response = await axios.get('http://localhost:5000/listings/GetData');
   
   const data =  response.data;
   console.log(data);

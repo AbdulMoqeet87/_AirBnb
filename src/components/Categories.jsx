@@ -16,7 +16,7 @@ const categories = [
   {
     name: "Countryside",
     icon: faTree,
-    "title": "Cozy Private Room",
+    "type": "Cozy Private Room",
   },
   {
     name: "Urban",
