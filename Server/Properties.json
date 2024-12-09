@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "image": "/hotel.jpg",
+    "title": "Luxury City Retreat",
+    "type": "Entire home",
+    "guests": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "price": "$120/night",
+    "rating": 4.8,
+    "location": {
+      "town": "Greenwood",
+      "city": "New York"
+    }
+  },
+  {
+    "id": 2,
+    "image": "/beach.jpg",
+    "title": "Cozy Getaway",
+    "type": "Private room",
+    "guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$80/night",
+    "rating": 4.5,
+    "location": {
+      "town": "Sunnyvale",
+      "city": "San Francisco"
+    }
+  },
+  {
+    "id": 3,
+    "image": "/beach2.jpg",
+    "title": "Seaside Paradise",
+    "type": "Entire home",
+    "guests": 8,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "price": "$350/night",
+    "rating": 5.0,
+    "location": {
+      "town": "Oceanview",
+      "city": "Miami"
+    }
+  },
+  {
+    "id": 4,
+    "image": "/urban.jpg",
+    "title": "Modern Downtown Suite",
+    "type": "Entire home",
+    "guests": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "price": "$120/night",
+    "rating": 4.8,
+    "location": {
+      "town": "Riverside",
+      "city": "Chicago"
+    }
+  },
+  {
+    "id": 5,
+    "image": "/hotel.jpg",
+    "title": "Peaceful Sanctuary",
+    "type": "Private room",
+    "guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$80/night",
+    "rating": 4.5,
+    "location": {
+      "town": "Hillcrest",
+      "city": "Seattle"
+    }
+  },
+  {
+    "id": 6,
+    "image": "/urban.jpg",
+    "title": "Beachfront Haven",
+    "type": "Entire home",
+    "guests": 8,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "price": "$350/night",
+    "rating": 5.0,
+    "location": {
+      "town": "Palm Cove",
+      "city": "San Diego"
+    }
+  },
+  {
+    "id": 7,
+    "image": "/hotel.jpg",
+    "title": "Charming Cottage",
+    "type": "Entire home",
+    "guests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "price": "$150/night",
+    "rating": 4.9,
+    "location": {
+      "town": "Fairview",
+      "city": "Boston"
+    }
+  },
+  {
+    "id": 8,
+    "image": "/beach2.jpg",
+    "title": "Tropical Hideaway",
+    "type": "Private room",
+    "guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$95/night",
+    "rating": 4.7,
+    "location": {
+      "town": "Bay Point",
+      "city": "Honolulu"
+    }
+  },
+  {
+    "id": 9,
+    "image": "/urban.jpg",
+    "title": "Uptown Elegance",
+    "type": "Entire home",
+    "guests": 5,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "price": "$200/night",
+    "rating": 4.6,
+    "location": {
+      "town": "Brooklyn",
+      "city": "New York"
+    }
+  },
+  {
+    "id": 10,
+    "image": "/hotel.jpg",
+    "title": "Serene Retreat",
+    "type": "Private room",
+    "guests": 3,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$70/night",
+    "rating": 4.4,
+    "location": {
+      "town": "Willow Creek",
+      "city": "Austin"
+    }
+  },
+  {
+    "id": 11,
+    "image": "/beach.jpg",
+    "title": "Countryside Escape",
+    "type": "Entire home",
+    "guests": 4,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "price": "$110/night",
+    "rating": 4.7,
+    "location": {
+      "town": "Springfield",
+      "city": "Denver"
+    }
+  },
+  {
+    "id": 12,
+    "image": "/beach2.jpg",
+    "title": "Oceanfront Bliss",
+    "type": "Entire home",
+    "guests": 10,
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "price": "$500/night",
+    "rating": 5.0,
+    "location": {
+      "town": "Harborview",
+      "city": "Los Angeles"
+    }
+  },
+  {
+    "id": 13,
+    "image": "/urban.jpg",
+    "title": "City Lights Studio",
+    "type": "Private room",
+    "guests": 1,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$50/night",
+    "rating": 4.2,
+    "location": {
+      "town": "Downtown",
+      "city": "San Francisco"
+    }
+  },
+  {
+    "id": 14,
+    "image": "/hotel.jpg",
+    "title": "Artistic Loft",
+    "type": "Entire home",
+    "guests": 3,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$130/night",
+    "rating": 4.8,
+    "location": {
+      "town": "Midtown",
+      "city": "Chicago"
+    }
+  },
+  {
+    "id": 15,
+    "image": "/beach.jpg",
+    "title": "Historic Townhouse",
+    "type": "Entire home",
+    "guests": 8,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "price": "$240/night",
+    "rating": 4.9,
+    "location": {
+      "town": "Old Town",
+      "city": "Philadelphia"
+    }
+  },
+  {
+    "id": 16,
+    "image": "/beach2.jpg",
+    "title": "Cabin in the Woods",
+    "type": "Entire home",
+    "guests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "price": "$180/night",
+    "rating": 4.8,
+    "location": {
+      "town": "Maple Valley",
+      "city": "Seattle"
+    }
+  },
+  {
+    "id": 17,
+    "image": "/urban.jpg",
+    "title": "Penthouse Suite",
+    "type": "Entire home",
+    "guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$220/night",
+    "rating": 4.7,
+    "location": {
+      "town": "Manhattan",
+      "city": "New York"
+    }
+  },
+  {
+    "id": 18,
+    "image": "/hotel.jpg",
+    "title": "Cozy Basement Apartment",
+    "type": "Private room",
+    "guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$60/night",
+    "rating": 4.3,
+    "location": {
+      "town": "Pinewood",
+      "city": "Portland"
+    }
+  },
+  {
+    "id": 19,
+    "image": "/beach.jpg",
+    "title": "Rustic Mountain Lodge",
+    "type": "Entire home",
+    "guests": 8,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "price": "$300/night",
+    "rating": 4.9,
+    "location": {
+      "town": "Aspen Grove",
+      "city": "Denver"
+    }
+  },
+  {
+    "id": 20,
+    "image": "/beach2.jpg",
+    "title": "Modern Minimalist Studio",
+    "type": "Private room",
+    "guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$90/night",
+    "rating": 4.6,
+    "location": {
+      "town": "Silicon Valley",
+      "city": "San Jose"
+    }
+  },
+  {
+    "id": 21,
+    "image": "/urban.jpg",
+    "title": "Classic Victorian Home",
+    "type": "Entire home",
+    "guests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "price": "$190/night",
+    "rating": 4.8,
+    "location": {
+      "town": "Queen Anne",
+      "city": "Seattle"
+    }
+  },
+  {
+    "id": 22,
+    "image": "/hotel.jpg",
+    "title": "Eco-Friendly Retreat",
+    "type": "Entire home",
+    "guests": 4,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "price": "$150/night",
+    "rating": 4.7,
+    "location": {
+      "town": "Greenbelt",
+      "city": "Austin"
+    }
+  },
+  {
+    "id": 23,
+    "image": "/beach.jpg",
+    "title": "Lakefront Escape",
+    "type": "Entire home",
+    "guests": 10,
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "price": "$450/night",
+    "rating": 5.0,
+    "location": {
+      "town": "Lakeside",
+      "city": "Nashville"
+    }
+  },
+  {
+    "id": 24,
+    "image": "/beach2.jpg",
+    "title": "Bright Urban Flat",
+    "type": "Private room",
+    "guests": 1,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$55/night",
+    "rating": 4.1,
+    "location": {
+      "town": "Little Italy",
+      "city": "San Diego"
+    }
+  },
+  {
+    "id": 25,
+    "image": "/urban.jpg",
+    "title": "High-Rise Apartment",
+    "type": "Private room",
+    "guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$120/night",
+    "rating": 4.5,
+    "location": {
+      "town": "Uptown",
+      "city": "Dallas"
+    }
+  },
+  {
+    "id": 26,
+    "image": "/hotel.jpg",
+    "title": "Serene Hillside Cottage",
+    "type": "Entire home",
+    "guests": 6,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "price": "$210/night",
+    "rating": 4.8,
+    "location": {
+      "town": "Cedar Grove",
+      "city": "Denver"
+    }
+  },
+  {
+    "id": 27,
+    "image": "/beach.jpg",
+    "title": "Woodland Retreat",
+    "type": "Entire home",
+    "guests": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "price": "$110/night",
+    "rating": 4.5,
+    "location": {
+      "town": "Redwood",
+      "city": "San Francisco"
+    }
+  },
+  {
+    "id": 28,
+    "image": "/beach2.jpg",
+    "title": "Historic Farmhouse",
+    "type": "Entire home",
+    "guests": 12,
+    "bedrooms": 6,
+    "bathrooms": 4,
+    "price": "$400/night",
+    "rating": 4.9,
+    "location": {
+      "town": "Fultonville",
+      "city": "Philadelphia"
+    }
+  },
+  {
+    "id": 29,
+    "image": "/urban.jpg",
+    "title": "Artisan's Haven",
+    "type": "Private room",
+    "guests": 1,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "price": "$80/night",
+    "rating": 4.3,
+    "location": {
+      "town": "Warehouse District",
+      "city": "New Orleans"
+    }
+  },
+  {
+    "id": 30,
+    "image": "/hotel.jpg",
+    "title": "Luxury Penthouse",
+    "type": "Entire home",
+    "guests": 5,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "price": "$500/night",
+    "rating": 5.0,
+    "location": {
+      "town": "Magnolia Park",
+      "city": "Houston"
+    }
+  }
+]
