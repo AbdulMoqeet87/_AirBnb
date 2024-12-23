@@ -16,6 +16,17 @@
   box-shadow: 0 4px 2px -2px gray; 
   
 }
+/* Background styling */
+.login {
+  background: url('login5.png') no-repeat center/cover; /* Replace 'login.jpg' with your image path */
+  filter: blur(0px); /* Adjust the blur intensity */
+}
+
+/* Add these styles to support form transparency and blur */
+.backdrop-blur-md {
+  backdrop-filter: blur(10px); /* Applies blur to the background behind the form */
+}
+
 
 .navbar-logo .logo {
   height: 50px;
