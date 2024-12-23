@@ -25,7 +25,8 @@
     "react-router-dom": "^6.28.0",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
-    "tw-elements-react": "^1.0.0-alpha-end"
+    "tw-elements-react": "^1.0.0-alpha-end",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

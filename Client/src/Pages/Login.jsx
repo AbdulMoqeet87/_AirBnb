@@ -112,7 +112,7 @@ const Login = () => {
                 </button>
               </div>
               <p className="text-xs text-gray-800 mt-4">
-                Don't have an account?{" "}
+                Don`t have an account?{" "}
                 <a
                   href="javascript:void(0);"
                   className="text--600 font-semibold hover:underline ml-1"

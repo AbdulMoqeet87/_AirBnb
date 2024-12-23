@@ -1,5 +1,9 @@
 import fs from 'fs/promises';
 import { User } from '../Models/UserSchema.js';
+import bcrypt from "bcryptjs";
+import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
+dotenv.config();
 
 export const  ReadFile= async(filePath)=>
 {
@@ -63,38 +67,62 @@ export const ExportDataById= async(req, res) => {
 
 
 
+export const loginUser= async(req, res)=> {{
 
+try {
+
+console.log(req.body,"1");
+const{email,password}=req.body;
+const existingUser = await User.findOne({ email });
+if(!existingUser){
+  return res.status(400).json({ success: false, message: "User Doesn't exist"});
+}
+console.log(req.body,"2");
+const isPasswordCorrect = await bcrypt.compare(password, existingUser.Password);
+if(!isPasswordCorrect){
+  return res.status(400).json({ success: false, message: "invalid password"});
+}
+console.log(req.body,"3");
+
+const token= jwt.sign({id:existingUser._id}, process.env.JWT_SECRET,{expiresIn:"1h"});
+
+res.status(200).json({existingUser,token});
+
+} catch (error) {
+  console.log(error);
+  res.status(500).send("something went wrong");
+}
+
+}}
 
 
 export const addNewUser = async (req, res) => {
     try {
-      // Extract user data from the request body
+      
       const { UserName, FirstName, LastName, Password, email, PhoneNo, city, role } = req.body;
   
-      // Validate required fields
-      if (!UserName || !FirstName || !LastName || !Password || !email || !PhoneNo || !city) {
+      
+      if (!UserName || !Password || !email || !PhoneNo ) {
         return res.status(400).json({ success: false, message: "All fields are required." });
       }
   
-      // Check if email is already in use
       const existingUser = await User.findOne({ email });
       if (existingUser) {
         return res.status(400).json({ success: false, message: "Email is already in use." });
       }
-  
-      // Create a new user instance
+      const HashedPass= await bcrypt.hash(Password,12);
+
       const newUser = new User({
         UserName,
         FirstName,
         LastName,
-        Password, // You can hash the password here if needed
+        Password:HashedPass, 
         email,
         PhoneNo,
         city,
-        role: role || "user" // Default role is 'user'
+        role: role || "user" 
       });
   
-      // Save the user to the database
       await newUser.save();
   
       // Respond with success

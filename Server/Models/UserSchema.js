@@ -77,19 +77,6 @@ const UserSchema = new Schema({
     minLength: [3, "Username MUST be at least 3 characters long."],
     maxLength: [255, "Username CANNOT exceed 255 characters."]
   },
-  FirstName: {
-    type: String,
-    required: true,
-    minLength: [3, "First Name MUST be at least 3 characters long."],
-    maxLength: [255, "Username CANNOT exceed 255 characters."]
-  },
-  LastName: {
-    type: String,
-    required: true,
-    minLength: [3, "Last Name MUST be at least 3 characters long."],
-    maxLength: [255, "Username CANNOT exceed 255 characters."]
-  },
-  
   Password: {
     type: String,
     required: true,
@@ -105,10 +92,6 @@ const UserSchema = new Schema({
     required: true,
     minLength: [11, "Phone number MUST contain 11 digits."],
     maxLength: [11, "Phone number MUST contain 11 digits."]
-  },
-  city: {
-    type: String,
-    required: true
   },
 
   role: {
