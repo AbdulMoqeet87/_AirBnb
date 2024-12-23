@@ -1,5 +1,6 @@
 import  { useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast"
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -10,8 +11,11 @@ const Signup = () => {
     role: "User", // Default role
   });
 
+const [loading,Setloading]= useState(false);
+
   const handleInputChange = (e) => {
     e.preventDefault();
+    
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -22,13 +26,19 @@ const Signup = () => {
   const handleSubmit = async () => {
     try {
         console.log("form", formData);
+        Setloading(true);
         const response = await axios.post("http://localhost:5000/listings/AddUser", formData);
 
-      console.log("Account created successfully:", response.data);
-      alert("Account created successfully!");
+        toast.success("Account created successfully!");
+        console.log("Account created successfully:", response.data);
+      
     } catch (error) {
+
       console.error("Error creating account:", error);
-      alert("Failed to create account. Please try again.");
+      toast.error(error.response.data.message);
+    }
+    finally{
+        Setloading(false);
     }
   };
 
@@ -121,11 +131,12 @@ const Signup = () => {
 
               <div className="mt-8">
                 <button
+                disabled={loading}
                   type="button"
                   onClick={handleSubmit}
                   className="py-3 px-6 text-xs font-semibold text-white tracking-wide bg-red-500 hover:bg-red-600 focus:outline-none"
                 >
-                  Create Account
+                  {loading ? "Loading":"Create Account" }
                 </button>
               </div>
               <p className="text-xs text-gray-800 mt-4">
