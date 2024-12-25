@@ -1,53 +1,9 @@
 import fs from 'fs/promises';
-import { User } from '../Models/UserSchema.js';
+import { Host } from '../Models/HostSchema.js';
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 dotenv.config();
-
-export const  ReadFile= async(filePath)=>
-{
-    try{
-        const data = await fs.readFile(filePath,"utf-8");
-       const jdata= JSON.parse(data);
-       return jdata;
-       
-    }
-        catch (error) {
-            console.error('Error in GET /:', error);
-        }
-    
-}
-
-export const ExportData= async(req, res) => {
-
-    try{
-    const data = await ReadFile('Properties.json');
-    console.log("Requested");    
-    res.json(data);
-    }
-    catch (error) {
-        console.error('Error in GET /:', error);
-        res.status(500).json({ error: 'Failed to read or parse file' });
-    }
-};
-
-
-
-export const DataCheck = async (req, res) => {
-    try {
-      // Retrieve all ground owners from the database
-      const user = await User.find();
-  
-      // Extract ground names from each ground owner
-   
-      res.status(200).json({ success: true, data: user });
-    } catch (error) {
-      res.status(500).json({ success: false, error: error.message });
-    }
-  };
-  
-
 
 
 export const ExportDataById= async(req, res) => {
@@ -67,13 +23,13 @@ export const ExportDataById= async(req, res) => {
 
 
 
-export const loginUser= async(req, res)=> {{
+export const loginHost= async(req, res)=> {{
 
 try {
 
 console.log(req.body,"1");
 const{email,password}=req.body;
-const existingUser = await User.findOne({ email });
+const existingUser = await Host.findOne({ email });
 if(!existingUser){
   return res.status(400).json({ success: false, message: "User Doesn't exist"});
 }
@@ -95,38 +51,8 @@ res.status(200).json({existingUser,token});
 
 }}
 
-export const LogBack=async(req,res)=>{
 
-  try {
-    const token = req.headers.authorization.split(" ")[1];
-    console.log(token);
-    const decoded_token= jwt.verify(token,process.env.JWT_SECRET);
-  
-    const isExpired = Date.now() >= decoded_token.exp*1000;
-    if(isExpired)
-      return res.status(401).json({message: "Expired token"});
-    console.log("Not expired",decoded_token);
-
-    console.log("i am user",decoded_token.id);
-    const user= await User.findById(decoded_token.id);
-
-    console.log("i am user",user);
-    if(!user)
-      { 
-      console.log("Ni askta");
-        res.status(500).json({message:error.message});    
-      
-          }
-          console.log("i am user",user);
-    return res.status(200).json({data: user});
-    
-  } catch (error) {
-    res.status(500).json({message:error.message});    
-  }
-  
-}
-
-export const addNewUser = async (req, res) => {
+export const CreateHost = async (req, res) => {
     try {
       
       const { UserName, FirstName, LastName, Password, email, PhoneNo, city, role } = req.body;
@@ -136,13 +62,13 @@ export const addNewUser = async (req, res) => {
         return res.status(400).json({ success: false, message: "All fields are required." });
       }
   
-      const existingUser = await User.findOne({ email });
+      const existingUser = await Host.findOne({ email });
       if (existingUser) {
         return res.status(400).json({ success: false, message: "Email is already in use." });
       }
       const HashedPass= await bcrypt.hash(Password,12);
 
-      const newUser = new User({
+      const newUser = new Host({
         UserName,
         FirstName,
         LastName,
@@ -150,7 +76,7 @@ export const addNewUser = async (req, res) => {
         email,
         PhoneNo,
         city,
-        role: role || "user" 
+        role: "host" 
       });
   
       await newUser.save();

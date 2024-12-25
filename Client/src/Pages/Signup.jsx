@@ -1,14 +1,18 @@
 import  { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast"
 
 const Signup = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     UserName: "",
     email: "",
     PhoneNo: "",
     Password: "",
-    role: "User", // Default role
+    role: "user", // Default role
   });
 
 const [loading,Setloading]= useState(false);
@@ -27,11 +31,12 @@ const [loading,Setloading]= useState(false);
     try {
         console.log("form", formData);
         Setloading(true);
-        const response = await axios.post("http://localhost:5000/listings/AddUser", formData);
+        const response = await axios.post("http://localhost:5000/user/signup", formData);
 
         toast.success("Account created successfully!");
         console.log("Account created successfully:", response.data);
-      
+         navigate("/");
+
     } catch (error) {
 
       console.error("Error creating account:", error);
@@ -104,10 +109,10 @@ const [loading,Setloading]= useState(false);
                         type="radio"
                         id="user"
                         name="role"
-                        value="User"
+                        value="user"
                         className="text-pink-500"
                         required
-                        checked={formData.role === "User"}
+                        checked={formData.role === "user"}
                         onChange={handleInputChange}
                       />
                       <label htmlFor="user" className="ml-2 text-gray-800 text-xs">User</label>
@@ -117,10 +122,10 @@ const [loading,Setloading]= useState(false);
                         type="radio"
                         id="host"
                         name="role"
-                        value="Host"
+                        value="host"
                         className="text-pink-500"
                         required
-                        checked={formData.role === "Host"}
+                        checked={formData.role === "host"}
                         onChange={handleInputChange}
                       />
                       <label htmlFor="host" className="ml-2 text-gray-800 text-xs">Host</label>

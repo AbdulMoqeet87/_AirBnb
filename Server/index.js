@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import router from "./Router/route.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 
 // Middleware
@@ -18,12 +19,13 @@ app.use(
 );
 
 // Routes
-app.use('/listings', router);
+app.use('/user', router);
+app.use('/host', router);
 
 // MongoDB Connection
-const uri = "mongodb://127.0.0.1:27017/listings";
+ 
 
-mongoose.connect(uri)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB successfully!"))
   .catch(err => console.error("Failed to connect to MongoDB:", err));
 

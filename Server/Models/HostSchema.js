@@ -65,8 +65,7 @@ const HostSchema = new Schema({
   },
 
   role: {
-    type: String,
-    default: "user"
+    type: String
   },
   Properties:[Property]
 

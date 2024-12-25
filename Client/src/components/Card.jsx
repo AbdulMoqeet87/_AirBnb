@@ -16,7 +16,7 @@ const navigate= useNavigate();
 const fetchData =async()=>{
 
   try{
-    const response = await axios.get('http://localhost:5000/listings/GetData');
+    const response = await axios.get('http://localhost:5000/user/GetData');
   
   const data =  response.data;
   console.log(data);

@@ -4,51 +4,51 @@ const { Schema } = mongoose;
 
 
 // Define the Booked Slot Schema
-const BookedSlotSchema = new Schema({
-  propertyId: { 
-    type: String, 
-    required: true, // ID of the booked property
-    ref: 'Property' // Referencing the Property schema (optional, for relational use)
-  },
-  userId: { 
-    type: String, 
-    required: true // ID of the user who booked the property
-  },
-  userName: {
-    type: String,
-    required: true // Name of the user who booked
-  },
-  userEmail: {
-    type: String,
-    required: true // Email of the user who booked
-  },
-  bookingDate: { 
-    type: Date, 
-    required: true, // Date when the property was booked
-    default: Date.now 
-  },
-  checkInDate: { 
-    type: Date, 
-    required: true // Check-in date for the property
-  },
-  checkOutDate: { 
-    type: Date, 
-    required: true // Check-out date for the property
-  },
-  totalGuests: { 
-    type: Number, 
-    required: true // Number of guests staying
-  },
-  totalPrice: { 
-    type: Number, 
-    required: true // Total price for the booking
-  },
-  status: { 
-    type: String, 
-    enum: ['Pending', 'Confirmed', 'Cancelled'], 
-    default: 'Pending' // Status of the booking
-  }
-});
+// const BookedProperties = new Schema({
+//   propertyId: { 
+//     type: String, 
+//     required: true, // ID of the booked property
+   
+//   },
+//   userId: { 
+//     type: String, 
+//     required: true // ID of the user who booked the property
+//   },
+//   userName: {
+//     type: String,
+//     required: true // Name of the user who booked
+//   },
+//   userEmail: {
+//     type: String,
+//     required: true // Email of the user who booked
+//   },
+//   bookingDate: { 
+//     type: Date, 
+//     required: true, // Date when the property was booked
+//     default: Date.now 
+//   },
+//   checkInDate: { 
+//     type: Date, 
+//     required: true // Check-in date for the property
+//   },
+//   checkOutDate: { 
+//     type: Date, 
+//     required: true // Check-out date for the property
+//   },
+//   totalGuests: { 
+//     type: Number, 
+//     required: true // Number of guests staying
+//   },
+//   totalPrice: { 
+//     type: Number, 
+//     required: true // Total price for the booking
+//   },
+//   status: { 
+//     type: String, 
+//     enum: ['Pending', 'Confirmed', 'Cancelled'], 
+//     default: 'Pending' // Status of the booking
+//   }
+// });
 
 
 const Property = new Schema({
@@ -65,7 +65,10 @@ const Property = new Schema({
   price: String,
   rating: Number,
   town: String,
-  city: String
+  city: String,
+  bookingDate: Date,
+  bookingEndDate:Date,
+  TotalPrice:Number
 });
 
 
@@ -95,12 +98,11 @@ const UserSchema = new Schema({
   },
 
   role: {
-    type: String,
-    default: "user"
+    type: String
   }
   ,
   Properties:[Property],
-  BookedSlots:[BookedSlotSchema]
+//  BookedSlots:[BookedProperties]
 });
 
 export const User = mongoose.model("User", UserSchema);

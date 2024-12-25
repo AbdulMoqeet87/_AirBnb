@@ -2,13 +2,15 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { useAuthStore } from "../store/useAuthStore";
 import toast from "react-hot-toast";
-
+// import { useNavigate } from "react-router-dom";
 const Login = () => {
+    const{setUser}=  useAuthStore();
+    //const navigate= useNavigate();
     const [formData, setFormData] = useState({
         email: "",
         password: "",
-        role: "User",
     });
 
     const [loading, setLoading] = useState(false);
@@ -29,7 +31,7 @@ const Login = () => {
     };
 
     const handleSubmit = async () => {
-        if (!formData.email || !formData.password || !formData.role) {
+        if (!formData.email || !formData.password) {
             toast.error("Please fill in all fields.");
             return;
         }
@@ -38,11 +40,14 @@ const Login = () => {
             console.log("Form Data:", formData);
             setLoading(true);
             const response = await axios.post(
-               "http://localhost:5000/listings/logUser",
+               "http://localhost:5000/user/login",
                 formData
             );
             toast.success("Logged in successfully!");
-            console.log("Response:", response.data);
+            console.log("Response:", response.data.existingUser);
+                setUser(response.data.existingUser);
+                const token=response.data.token;
+                localStorage.setItem("authToken", token);
         } catch (error) {
             console.error("Error:", error);
             toast.error(error.response?.data?.message || "An unexpected error occurred.");
@@ -97,35 +102,7 @@ const Login = () => {
                                     </button>
                                 </div>
                             </div>
-                            {/* Role */}
-                            <div className="flex space-x-4">
-                                <div className="flex items-center">
-                                    <input
-                                        type="radio"
-                                        id="user"
-                                        name="role"
-                                        value="User"
-                                        checked={formData.role === "User"}
-                                        onChange={handleInputChange}
-                                    />
-                                    <label htmlFor="user" className="ml-2 text-gray-800 text-xs">
-                                        User
-                                    </label>
-                                </div>
-                                <div className="flex items-center">
-                                    <input
-                                        type="radio"
-                                        id="host"
-                                        name="role"
-                                        value="Host"
-                                        checked={formData.role === "Host"}
-                                        onChange={handleInputChange}
-                                    />
-                                    <label htmlFor="host" className="ml-2 text-gray-800 text-xs">
-                                        Host
-                                    </label>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div className="mt-8">
                             <button
