@@ -70,3 +70,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.bg_images_T {
+  background-image: url(../public/login10.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; /* Required for the overlay */
+}

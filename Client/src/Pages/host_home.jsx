@@ -1,16 +1,24 @@
+import React,{ useState } from 'react'
+import '../App.css'
 
-function Host_Home(){
+import Footer from '../components/footer'
+import Navbar from '../components/Navbar'
+import DropDown from '../components/DropDown';
 
+export const context = React.createContext();
 
-return(
-    <>
-    <p className="bg-red-500">
-        Hello World
-    </p>
-    </>
-)
+function Host_Home() {
+ 
+ 
+  const [cat,setCategory]=useState("");  
+  
+  return (
+      
+      <>
+            <Navbar/>     
+            <Footer/> 
+      </>
+    )
+}  
 
-
-}
-
-export default  Host_Home;
+export default Host_Home

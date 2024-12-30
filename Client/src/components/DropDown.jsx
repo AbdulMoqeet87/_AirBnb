@@ -1,36 +1,57 @@
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faUserCircle } from '@fortawesome/free-solid-svg-icons'; // Import icons from Font Awesome
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import {
+  ArchiveBoxXMarkIcon,
+  ChevronDownIcon,
+  PencilIcon,
+  Square2StackIcon,
+  TrashIcon,
+} from '@heroicons/react/20/solid';
 
-const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-    console.log("Dropdown is now: ", !isOpen); // Debugging line
-  };
-  
-
+export default function Example() {
   return (
-    <div className="dropdown-container">
-      <button className="dropdown-button" onClick={toggleDropdown}>
-        {/* Hamburger Menu Icon */}
-        <FontAwesomeIcon icon={faBars} className="hamburger-icon" />
-        {/* Profile Icon */}
-        <FontAwesomeIcon icon={faUserCircle} className="profile-icon" />
-      </button>
+    <div className="fixed top-0 w-52 text-right">
+      <Menu>
+        <MenuButton className="inline-flex items-center gap-2 rounded-md bg-black py-1.5 px-3 text-sm font-semibold text-white shadow-inner shadow-white/10 focus:outline-none hover:bg-gray-700">
+          Options
+          <ChevronDownIcon className="h-4 w-4 text-white/60" />
+        </MenuButton>
 
-      {isOpen && (
-        <div className="dropdown-menu">
-          <ul>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#settings">Settings</a></li>
-            <li><a href="#logout">Logout</a></li>
-          </ul>
-        </div>
-      )}
+        <MenuItems
+          transition
+          anchor="bottom end"
+          className="w-52 origin-top-right rounded-xl border border-white/5 bg-white/5 p-1 text-sm text-white transition duration-100 ease-out focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+        >
+          <MenuItem>
+            <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 focus:bg-white/10">
+              <PencilIcon className="h-4 w-4 text-white/30" />
+              Edit
+              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-focus:inline">⌘E</kbd>
+            </button>
+          </MenuItem>
+          <MenuItem>
+            <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 focus:bg-white/10">
+              <Square2StackIcon className="h-4 w-4 text-white/30" />
+              Duplicate
+              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-focus:inline">⌘D</kbd>
+            </button>
+          </MenuItem>
+          <div className="my-1 h-px bg-white/5" />
+          <MenuItem>
+            <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 focus:bg-white/10">
+              <ArchiveBoxXMarkIcon className="h-4 w-4 text-white/30" />
+              Archive
+              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-focus:inline">⌘A</kbd>
+            </button>
+          </MenuItem>
+          <MenuItem>
+            <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 focus:bg-white/10">
+              <TrashIcon className="h-4 w-4 text-white/30" />
+              Delete
+              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-focus:inline">⌘D</kbd>
+            </button>
+          </MenuItem>
+        </MenuItems>
+      </Menu>
     </div>
   );
-};
-
-export default Dropdown;
+}
